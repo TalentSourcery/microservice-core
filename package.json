@@ -1,0 +1,66 @@
+{
+  "name": "microservice-core",
+  "version": "1.0.0",
+  "description": "Microservice template",
+  "type": "module",
+  "engines": {
+    "node": "^17.0.0",
+    "npm": "^8.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "restart": "node index.js --update-env",
+    "stop": "node index.js",
+    "start:dev": "nodemon --inspect=0.0.0.0 index.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TalentSourcery/microservice-core.git"
+  },
+  "license": "no",
+  "private": true,
+  "keywords": [
+    "microservice",
+    "nodejs",
+    "express",
+    "rest",
+    "jest",
+    "eslint",
+    "mongodb"
+  ],
+  "author": {
+    "name": "Sindélio Henrique Lima",
+    "email": "sindelio@gmail.com",
+    "url": "https://github.com/sindelio"
+  },
+  "contributors": [
+    {
+      "name": "Rodrigo Bernardi",
+      "email": "rodrigo.n.bernardi@gmail.com",
+      "url": "https://github.com/rhobernardi"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/TalentSourcery/microservice-core/issues"
+  },
+  "homepage": "https://github.com/TalentSourcery/microservice-core#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "celebrate": "^15.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "9.0.2",
+    "express": "^5.0.0-alpha.8",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "jest": "^27.4.4",
+    "nodemon": "^2.0.15"
+  }
+}

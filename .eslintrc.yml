@@ -1,0 +1,106 @@
+# Official documentation: https://eslint.org/docs/rules/
+# AirBNB style guide: https://github.com/airbnb/javascript
+
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+extends:
+  - airbnb-base
+parserOptions:
+  ecmaVersion: 12
+rules:
+  # BASIC
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+
+  # POSSIBLE ERRORS
+  no-await-in-loop:
+    - warn
+  # no-console:
+  #   - error
+  #   # - allow
+  #   #   - error
+  # no-extra-parens:
+  #   - error
+  #   - all
+
+  # BEST PRACTICES
+  no-param-reassign:
+    - error
+    - props: false
+  # eqeqeq:
+  #   - error
+  #   - always
+  # no-proto:
+  #   - error
+  # no-eval:
+  #   - error
+  # dot-location:
+  #   - error
+  #   - property
+  # max-classes-per-file:
+  #   - warn
+  #   - 1
+
+  # STRICT
+  # strict:
+  #   - error
+
+  # VARIABLES
+  no-unused-vars:
+    - warn
+    - args: after-used
+
+  # STYLE
+  max-len:
+    - warn
+    - { code: 100, tabWidth: 2 }
+  # array-bracket-newline:
+  #   - error
+  #   - always
+  # array-bracket-spacing:
+  #   - error
+  #   - never
+  # brace-style:
+  #   - error
+  #   - 1tbs
+  # camelcase:
+  #   - error
+  # comma-dangle:
+  #   - error
+  #   - always
+
+  # ES6
+  # sort-imports:
+  #   - error
+  # prefer-const:
+  #   - error
+  # prefer-arrow-callback:
+  #   - error
+  # no-var:
+  #   - error
+  # arrow-body-style:
+  #   - warn
+  #   - as-needed
+  # arrow-parens:
+  #   - error
+  #   - always
+  # arrow-spacing:
+  #   - error
+
+  # CUSTOM
+  import/order:
+    - off
+  import/extensions:
+    - off
