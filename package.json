@@ -49,6 +49,7 @@
   },
   "homepage": "https://github.com/TalentSourcery/microservice-core#readme",
   "dependencies": {
+    "axios": "^0.24.0",
     "body-parser": "^1.19.1",
     "celebrate": "^15.0.0",
     "cors": "^2.8.5",
@@ -60,7 +61,8 @@
   },
   "devDependencies": {
     "eslint": "^8.4.1",
-    "jest": "^27.4.4",
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }

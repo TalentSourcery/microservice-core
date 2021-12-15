@@ -1,11 +1,11 @@
 import express from 'express';
-import jwtVerifier from './middleware/auth/auth.middleware.js';
+import jwtVerifier from './middlewares/auth/auth.middleware.js';
 import controller from './controller.js';
 import {
   signupValidator,
   authenticateValidator,
   updateValidator,
-} from './middleware/validator/validator.middleware.js';
+} from './middlewares/validator/validator.middleware.js';
 
 const router = express.Router();
 
