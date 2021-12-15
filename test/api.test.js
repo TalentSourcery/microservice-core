@@ -1,11 +1,11 @@
 const axios = require('axios');
-const HOST = 'http://localhost:5000/';
+const HOST = 'http://localhost:3000';
 
 let TOKEN = '';
 
 describe('Sign Up', () => {
   test('should create a user in database', async () => {
-    const url = `${HOST}api/v1/user/`;
+    const url = `${HOST}/api/v1/user/`;
     const body = {
       email: 'email@teste.com',
       password: 'umtestemaislongo',
@@ -53,7 +53,7 @@ describe('Sign Up', () => {
 
 describe('Authentication', () => {
   test('should authenticate using email and password returning a JWT Token', async () => {
-    const url = `${HOST}api/v1/user/signin`;
+    const url = `${HOST}/api/v1/user/signin`;
     const body = {
       email: 'email@teste.com',
       password: 'umtestemaislongo',
@@ -79,7 +79,7 @@ describe('Authentication', () => {
 
 describe('User actions', () => {
   test("should return authenticated user's info", async () => {
-    const url = `${HOST}api/v1/user/`;
+    const url = `${HOST}/api/v1/user/`;
 
     const config = {
       headers: {
@@ -113,7 +113,7 @@ describe('User actions', () => {
   });
 
   test("should update authenticated user's info", async () => {
-    const url = `${HOST}api/v1/user/`;
+    const url = `${HOST}/api/v1/user/`;
     const config = {
       headers: {
         Authorization: 'Bearer ' + TOKEN,
@@ -143,7 +143,7 @@ describe('User actions', () => {
   });
 
   test('should delete a user sending his email', async () => {
-    const url = `${HOST}api/v1/user/`;
+    const url = `${HOST}/api/v1/user/`;
     const config = {
       headers: {
         Authorization: 'Bearer ' + TOKEN,
