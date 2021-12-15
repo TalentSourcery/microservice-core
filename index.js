@@ -45,8 +45,8 @@ app.use(errorHandler);
 app.use(routeNotFoundHandler);
 
 // Starting the HTTP server
-const { ENVIRONMENT, PORT_API } = process.env;
-app.listen(PORT_API, () => {
+const { ENVIRONMENT, PORT_EXAMPLE } = process.env;
+app.listen(PORT_EXAMPLE, () => {
   console.log(`${ENVIRONMENT} Environment`);
-  console.log(`HTTP server is listening on port ${PORT_API}`);
+  console.log(`HTTP server is listening on port ${PORT_EXAMPLE}`);
 });
