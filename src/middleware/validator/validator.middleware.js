@@ -30,7 +30,7 @@ const authenticateValidator = celebrate({
 
 const updateValidator = celebrate({
   body: Joi.object({
-    email: Joi.string().forbidden(), // Emails are IDs, hence should not be updated
+    email: Joi.string().forbidden(),
     password: Joi.string()
       .min(8)
       .max(64),
@@ -39,7 +39,6 @@ const updateValidator = celebrate({
   }),
 });
 
-// All of these are middleware (a.k.a. functions)
 export {
   signupValidator,
   authenticateValidator,

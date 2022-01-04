@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import jsonwebtoken from 'jsonwebtoken';
+import Unauthorized from '../../errors/unauthorized.js';
 
 dotenv.config();
 
@@ -10,8 +11,7 @@ async function jwtVerifier(req, res, next) {
     const user = await jsonwebtoken.verify(jwt, secret);
     req.user = user;
   } catch (e) {
-    next(e);
-    return null;
+    throw new Unauthorized(e.message);
   }
   next();
   return null;

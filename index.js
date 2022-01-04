@@ -19,10 +19,10 @@ import bodyParser from 'body-parser';
 import router from './src/router.js';
 
 // Importing global error handler
-import errorHandler from './src/middlewares/error-handler/error.middleware.js';
+import errorHandler from './src/middleware/error-handler/error.middleware.js';
 
 // Importing handler for endpoints that are not available
-import routeNotFoundHandler from './src/middlewares/error-handler/404.middleware.js';
+import routeNotFoundHandler from './src/middleware/error-handler/404.middleware.js';
 
 // Instantiating the app's HTTP server, both for for backend and frontend atm
 const app = express();
