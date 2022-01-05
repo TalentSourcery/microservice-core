@@ -9,27 +9,31 @@ import {
 
 const router = express.Router();
 
-router.post('/', signupValidator, async (req, res, next) => {
-  await controller.create(req, res, next);
+router.get('/healthcheck', async (req, res) => {
+  await controller.healthCheck(req, res);
 });
 
-router.post('/signin', authenticateValidator, async (req, res, next) => {
-  await controller.authenticate(req, res, next);
+router.post('/', signupValidator, async (req, res) => {
+  await controller.create(req, res);
+});
+
+router.post('/signin', authenticateValidator, async (req, res) => {
+  await controller.authenticate(req, res);
 });
 
 // JWT auth for the endpoints below
 router.use(jwtVerifier);
 
-router.get('/', async (req, res, next) => {
-  await controller.read(req, res, next);
+router.get('/', async (req, res) => {
+  await controller.read(req, res);
 });
 
-router.patch('/', updateValidator, async (req, res, next) => {
-  await controller.update(req, res, next);
+router.patch('/', updateValidator, async (req, res) => {
+  await controller.update(req, res);
 });
 
-router.delete('/', async (req, res, next) => {
-  await controller.delete(req, res, next);
+router.delete('/', async (req, res) => {
+  await controller.delete(req, res);
 });
 
 export default router;

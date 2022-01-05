@@ -1,9 +1,27 @@
 import { User } from './database/models.js';
+import mongoose from 'mongoose';
 import jsonWebToken from 'jsonwebtoken';
 import NotFound from './errors/not-found.js';
 import BadRequest from './errors/bad-request.js';
 
 const service = {
+  async healthCheck() {
+    const dbConnectionState = mongoose.connection.readyState;
+    if (dbConnectionState === 1) {
+      const health = {
+        status: 'healthy',
+        dbConnectionState: 'connected',
+        uptime: process.uptime(),
+      };
+      return {
+        success: true,
+        data: health,
+        error: null,
+      };
+    } else {
+      throw new Error('Service is unhealthy');
+    }
+  },
   async create(info) {
     const userExists = await User.findOne(info);
     if (userExists !== null) throw new BadRequest(`User ${info.email} already in database`);

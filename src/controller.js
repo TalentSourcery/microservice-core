@@ -1,6 +1,10 @@
 import service from './service.js';
 
 const controller = {
+  async healthCheck(_req, res) {
+    const result = await service.healthCheck();
+    res.status(200).json(result);
+  },
   async create(req, res) {
     const info = {
       email: req.body.email,

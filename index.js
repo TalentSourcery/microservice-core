@@ -10,6 +10,7 @@ await mongoose.connect(DB_URL);
 // Importing modules
 import express from 'express';
 import cors from 'cors';
+import logger from './src/logs/logger.js'
 
 // Importing Express middleware
 import helmet from 'helmet';
@@ -47,6 +48,6 @@ app.use(routeNotFoundHandler);
 // Starting the HTTP server
 const { ENVIRONMENT, PORT_EXAMPLE } = process.env;
 app.listen(PORT_EXAMPLE, () => {
-  console.log(`${ENVIRONMENT} Environment`);
-  console.log(`HTTP server is listening on port ${PORT_EXAMPLE}`);
+  logger.info(`${ENVIRONMENT} Environment`);
+  logger.info(`HTTP server is listening on port ${PORT_EXAMPLE}`);
 });
