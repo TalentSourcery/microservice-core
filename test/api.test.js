@@ -7,9 +7,11 @@ import fetch from 'node-fetch';
 import server from '../server.js';
 
 // Constants. 'dotenv' doesn't work well with Jest
-const PORT = 3001;
-const DB_URL = 'mongodb://localhost:27017/test-db';
-const API_URL = 'http://localhost:3001/api/v1';
+const { 
+  PORT_EXAMPLE,
+  DB_URL,
+} = process.env;
+const API_URL = `http://localhost:${PORT_EXAMPLE}/api/v1`
 const TEST_USER = {
   email: 'user@domain.com',
   password: 'password',
@@ -17,7 +19,7 @@ const TEST_USER = {
 }
 
 // Starting the HTTP server
-const serverHandler = server.listen(PORT, () => {});
+const serverHandler = server.listen(PORT_EXAMPLE, () => {});
 
 beforeEach(async () => {
   await mongoose.connect(DB_URL);

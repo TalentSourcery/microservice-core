@@ -13,7 +13,7 @@
     "restart": "pm2 restart index.js --update-env",
     "stop": "pm2 stop index.js",
     "start:dev": "nodemon index.js",
-    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --silent",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --config ./test/jest.config.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
