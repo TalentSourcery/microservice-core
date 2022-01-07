@@ -1,6 +1,6 @@
 // Importing environment variables
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ path: './envs/dev.env' });
 
 // Connecting to the database
 import mongoose from 'mongoose';
