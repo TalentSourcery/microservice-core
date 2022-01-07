@@ -13,7 +13,7 @@
     "restart": "pm2 restart index.js --update-env",
     "stop": "pm2 stop index.js",
     "start:dev": "nodemon index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest --silent",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -29,8 +29,10 @@
     "express",
     "rest",
     "jest",
+    "bdd",
     "eslint",
-    "mongodb"
+    "mongodb",
+    "mongoose"
   ],
   "author": {
     "name": "Sindélio Henrique Lima",
@@ -45,7 +47,6 @@
     }
   ],
   "dependencies": {
-    "axios": "^0.24.0",
     "body-parser": "^1.19.1",
     "celebrate": "^15.0.0",
     "cors": "^2.8.5",
@@ -54,12 +55,12 @@
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.1",
-    "node-fetch": "^3.1.0",
     "pm2": "^5.1.2"
   },
   "devDependencies": {
     "eslint": "^8.4.1",
-    "jest": "27.4.5",
+    "jest": "^27.4.7",
+    "node-fetch": "^3.1.0",
     "nodemon": "^2.0.15"
   }
 }

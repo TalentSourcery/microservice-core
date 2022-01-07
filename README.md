@@ -37,4 +37,6 @@ The script won't work if you move to `/scripts` and execute it from there.
 
 ## 7. QUALITY ASSURANCE
 
-## 8. EXECUTION FLOW
+## 8. LOGS
+
+## 9. EXECUTION FLOW
