@@ -13,8 +13,7 @@
     "restart": "pm2 restart index.js --update-env",
     "stop": "pm2 stop index.js",
     "start:dev": "nodemon index.js",
-    "test:mocha": "mocha",
-    "test:jest": "node --experimental-vm-modules $(yarn bin jest) --config ./test/jest.config.js",
+    "test": "node --experimental-vm-modules $(yarn bin jest) --config ./test/jest.config.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
