@@ -17,5 +17,4 @@ async function jwtVerifier(req, res, next) {
   return null;
 }
 
-
 export default jwtVerifier;

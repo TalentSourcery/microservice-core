@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
 
 const adminSchema = new Schema({
@@ -15,11 +16,10 @@ const userSchema = new Schema({
   plan: String,
   createdAt: String,
   searchesLeft: Number,
-  numberOfSearchesThisMonth: Number,
   stripeCustomerId: String,
   lastUpdatedAt: String,
   numberOfSearchesThisMonth: Number,
-  numberOfTotalSearches: Number
+  numberOfTotalSearches: Number,
 });
 
 const searchSchema = new Schema({
@@ -40,13 +40,13 @@ const linkedinSearchSchema = new Schema({
   location: {
     country: String,
     countryCode: String,
-    city: String
+    city: String,
   },
   jobTitles: Array,
   keywords: Array,
   unwantedKeywords: Array,
   preferredCompanies: Array,
-  unwantedCompanies: Array,   
+  unwantedCompanies: Array,
 });
 
 const linkedinAccountSchema = new Schema({
@@ -57,7 +57,7 @@ const linkedinAccountSchema = new Schema({
     LI_AT_VALUE: String,
     JSESSIONID_VALUE: String,
     CSRF_VALUE: String,
-  }
+  },
 });
 
 const purchaseSchema = new Schema({
@@ -80,4 +80,4 @@ export {
   linkedinSearchSchema,
   linkedinAccountSchema,
   purchaseSchema,
-}
+};

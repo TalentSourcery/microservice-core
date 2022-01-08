@@ -23,18 +23,18 @@ const controller = {
     res.status(200).json(jwt);
   },
   async read(req, res) {
-    const email = req.user.email;
+    const { email } = req.user;
     const result = await service.read(email);
     res.status(200).json(result);
   },
   async update(req, res) {
-    const email = req.user.email;
+    const { email } = req.user;
     const newInfo = req.body;
     const result = await service.update(email, newInfo);
     res.status(200).json(result);
   },
   async delete(req, res) {
-    const email = req.user.email;
+    const { email } = req.user;
     const result = await service.delete(email);
     res.status(200).json(result);
   },

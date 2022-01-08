@@ -7,16 +7,16 @@ import fetch from 'node-fetch';
 import server from '../server.js';
 
 // Constants. 'dotenv' doesn't work well with Jest
-const { 
+const {
   PORT_EXAMPLE,
   DB_URL,
 } = process.env;
-const API_URL = `http://localhost:${PORT_EXAMPLE}/api/v1`
+const API_URL = `http://localhost:${PORT_EXAMPLE}/api/v1`;
 const TEST_USER = {
   email: 'user@domain.com',
   password: 'password',
   name: 'Username',
-}
+};
 
 // Starting the HTTP server
 const serverHandler = server.listen(PORT_EXAMPLE, () => {});
@@ -44,7 +44,7 @@ describe('GET /user/healthcheck', () => {
       `${API_URL}/user/healthcheck`,
       {
         method: 'GET',
-      }
+      },
     );
     const data = await response.json();
 
@@ -57,7 +57,7 @@ describe('GET /user/healthcheck', () => {
         uptime: expect.anything(),
       },
       error: null,
-    })
+    });
   });
 });
 
@@ -67,15 +67,15 @@ describe('POST /user', () => {
     // GIVEN
 
     // WHEN
-    const response = await fetch(`${API_URL}/user`,{
+    const response = await fetch(`${API_URL}/user`, {
       method: 'POST',
       body: JSON.stringify(TEST_USER),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
     });
     const data = await response.json();
-    
+
     // THEN
     expect(data).toEqual({
       success: true,
@@ -87,7 +87,7 @@ describe('POST /user', () => {
         __v: expect.anything(),
       },
       error: null,
-    })
+    });
   });
 });
 
@@ -99,23 +99,23 @@ describe('POST /user', () => {
     await user.save();
 
     // WHEN
-    const response = await fetch(`${API_URL}/user`,{
+    const response = await fetch(`${API_URL}/user`, {
       method: 'POST',
       body: JSON.stringify(TEST_USER),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
     });
     const data = await response.json();
-    
+
     // THEN
     expect(data).toEqual({
       success: false,
       data: null,
       error: {
         statusCode: 400,
-        message: `User ${TEST_USER.email} already in database`
+        message: `User ${TEST_USER.email} already in database`,
       },
-    })
+    });
   });
 });

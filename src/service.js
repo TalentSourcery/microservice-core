@@ -18,9 +18,8 @@ const service = {
         data: health,
         error: null,
       };
-    } else {
-      throw new Error('Service is unhealthy');
     }
+    throw new Error('Service is unhealthy');
   },
   async create(info) {
     const userExists = await User.findOne(info);

@@ -1,11 +1,16 @@
 env:
   browser: true
   es2021: true
+  jest/globals: true
 extends:
   - airbnb-base
 parserOptions:
   ecmaVersion: 13
   sourceType: module
+settings:
+  import/resolver: node
+plugins:
+  - jest
 rules:
   # BASIC
   indent:
@@ -101,3 +106,5 @@ rules:
     - off
   import/extensions:
     - off
+  import/prefer-default-export:
+    - warn
