@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 // Importing the HTTP server built with Express
 import server from '../server.js';
 
-// Constants. 'dotenv' doesn't work well with Jest
+// Constants
 const {
   PORT_EXAMPLE,
   DB_URL,
