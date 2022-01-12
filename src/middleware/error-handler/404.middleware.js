@@ -1,4 +1,4 @@
-function notFoundHandler(req, res, next) {
+function notFoundHandler(req, res, _next) {
   res.status(404).json({
     success: false,
     data: null,

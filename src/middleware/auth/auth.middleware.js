@@ -1,10 +1,7 @@
-import dotenv from 'dotenv';
 import jsonwebtoken from 'jsonwebtoken';
 import Unauthorized from '../../errors/unauthorized.js';
 
-dotenv.config();
-
-async function jwtVerifier(req, res, next) {
+async function jwtVerifier(req, _res, next) {
   const secret = process.env.JWT_USERS_SECRET;
   const jwt = req.headers.authorization.split(' ')[1];
   try {

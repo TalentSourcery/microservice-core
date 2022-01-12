@@ -1,6 +1,6 @@
 name: Continuous Integration
 on:
-  # - push
+  - push
   - pull_request
 jobs:
   test:
@@ -19,5 +19,3 @@ jobs:
       - uses: c-hive/gha-yarn-cache@v2
       - run: yarn install
       - run: yarn test
-# Future work:
-# - Mock the database so that tests can pass in GitHub actions

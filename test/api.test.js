@@ -1,16 +1,18 @@
 // Importing modules
 import mongoose from 'mongoose';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 import { User } from '../src/database/models.js';
 import fetch from 'node-fetch';
 
 // Importing the HTTP server built with Express
 import server from '../server.js';
 
+// Creating instance of "MongoMemoryServer" and starting it
+const mongod = await MongoMemoryServer.create();
+
 // Constants
-const {
-  PORT_EXAMPLE,
-  DB_URL,
-} = process.env;
+const DB_URI = mongod.getUri();
+const { PORT_EXAMPLE } = process.env;
 const API_URL = `http://localhost:${PORT_EXAMPLE}/api/v1`;
 const TEST_USER = {
   email: 'user@domain.com',
@@ -18,20 +20,23 @@ const TEST_USER = {
   name: 'Username',
 };
 
-// Starting the HTTP server
-const serverHandler = server.listen(PORT_EXAMPLE, () => {});
+let serverHandler = null;
+beforeAll(async () => {
+  serverHandler = await server.listen(PORT_EXAMPLE, () => {});
+});
 
 beforeEach(async () => {
-  await mongoose.connect(DB_URL);
+  await mongoose.connect(DB_URI);
 });
 
 afterEach(async () => {
   await mongoose.connection.db.dropDatabase();
-  mongoose.disconnect();
 });
 
 afterAll(async () => {
   serverHandler.close();
+  mongoose.disconnect();
+  mongod.stop();
 });
 
 // Example healtchcheck test

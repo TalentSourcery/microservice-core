@@ -7,7 +7,7 @@
 # Test coverage reports
 **/coverage
 
-# Yarn v3
+# Yarn v3 artifacts, without zero installs
 .pnp.*
 .yarn/*
 !.yarn/patches

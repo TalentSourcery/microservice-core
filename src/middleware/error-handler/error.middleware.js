@@ -1,7 +1,7 @@
 import logger from '../../logs/logger.js';
 
 // Error handling middleware requires 4 arguments
-function globalErrorHandler(error, req, res, next) {
+function globalErrorHandler(error, _req, res, _next) {
   logger.error(error);
   const statusCode = error.statusCode || 500;
   res.status(statusCode).json({
