@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [MICROSERVICE CORE](#microservice-core)
   - [1. OVERVIEW](#1-overview)
@@ -102,6 +103,7 @@ yarn lint
 ```
 
 It is recommended you install the ESLint extension in VSCode, which will show errors and warnings as you write the code.
+Errors must be removed, warnings are optional and may stay depending on the case.
 
 ## 9. QUALITY ASSURANCE
 
@@ -124,3 +126,7 @@ index > middleware > router > controller > service
 ## 12. CONTINUOUS INTEGRATION
 
 GitHub actions automatically run tests for Pull Requests - PRs, and code pushes. View the Actions tab in GitHub.
+
+## 13. APPLICATION PROGRAMMING INTERFACE
+
+There's an API collection request in `/src/utils/core_api.insomnia.json`. You can import and test it Insomnia.
