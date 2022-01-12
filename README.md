@@ -1,3 +1,23 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [MICROSERVICE CORE](#microservice-core)
+  - [1. OVERVIEW](#1-overview)
+  - [2. REQUISITES](#2-requisites)
+  - [3. SETUP](#3-setup)
+  - [4. STARTUP](#4-startup)
+  - [5. ENVIRONMENTS](#5-environments)
+  - [6. DEPENDENCY MANAGEMENT](#6-dependency-management)
+  - [7. DATABASE](#7-database)
+  - [8. CODE STYLE](#8-code-style)
+  - [9. QUALITY ASSURANCE](#9-quality-assurance)
+  - [10. LOGS](#10-logs)
+  - [11. EXECUTION FLOW](#11-execution-flow)
+  - [12. CONTINUOUS INTEGRATION](#12-continuous-integration)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # MICROSERVICE CORE
 
 ## 1. OVERVIEW
@@ -67,7 +87,7 @@ To add a user manually to MongoDB:
 ```
 db
 use talent-sourcery-db
-db.users.insertOne({ email: 'myemail@mydomain.com', password: 'mypassword' })
+db.users.insertOne({ email: 'email@domain.com', password: 'password' })
 db.users.find({}).pretty()
 ```
 
