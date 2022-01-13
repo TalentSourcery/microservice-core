@@ -7,7 +7,7 @@ import logger from './src/logs/logger.js';
 import server from './server.js';
 
 // Loading the environment variables
-dotenv.config({ path: './envs/dev.env' });
+dotenv.config();
 
 // Connecting to the database
 const { DB_URL } = process.env;

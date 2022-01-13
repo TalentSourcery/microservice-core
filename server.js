@@ -21,7 +21,7 @@ const server = express();
 // Setting middleware (order matters)
 server.use(helmet()); // Sets response headers securely
 const corsOptions = {
-  origin: 'http://localhost:*',
+  origin: '*',
 };
 server.use(cors(corsOptions)); // Use this after the variable declaration
 server.use(bodyParser.json()); // Parse JSON body
